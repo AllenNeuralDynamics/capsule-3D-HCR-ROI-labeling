@@ -7,7 +7,7 @@ Scaffold mimics the dev capsule (`/root/capsule`) desktop environment (the GUI n
 
 ## How to run (cloud workstation)
 1. Attach: the **inference asset** (`{sid}_features_all.parquet` + tight-bbox) from the
-   classifier capsule, the **raw** subject data (for image crops), and any **prior label
+   classifier capsule (https://codeocean.allenneuraldynamics.org/capsule/6697073/tree), the **raw** subject data (for image crops), and any **prior label
    assets** (one `*.jsonl` per past session).
 2. In a workstation terminal: `bash code/run` (override `SID`, `CANDIDATES`, `REVIEWER`,
    and the `MFISH_*` / `LABEL_ASSETS` paths via env as needed).
