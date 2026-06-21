@@ -17,11 +17,13 @@ Reproducible Run — `code/run` just prints a notice.
      (`/scratch/label_candidates.csv`) — mostly **keep/reject-borderline** ROIs
      (`|P(good)+P(bad_ok) − 0.5|` smallest) + a few **confident** ones per class,
      **excluding already-labeled ROIs**.
-2. **`bash code/label.sh "<sids>"`** — rebuilds the tight-bbox cache, launches the GUI on
-   the candidate list. Labels are written to **`/scratch/labels`** (persistent) — *not*
-   `/results`, which is **ephemeral on a cloud workstation**.
+2. **`code/run_labeling.ipynb`** — set the same `SUBJECT_IDS` + your `REVIEWER`, run the
+   cell. It rebuilds the tight-bbox cache and opens the GUI window **on the workstation
+   desktop** over the candidate list. Labels are written to **`/scratch/labels`**
+   (persistent) — *not* `/results`, which is **ephemeral on a cloud workstation**.
+   (Equivalent terminal command: `bash code/label.sh "<sids>"`.)
 3. **+100 more:** re-run cell 3 of `attach_data.ipynb` (regenerates candidates, excluding
-   what you just labeled) → re-run `code/label.sh`. New labels append as a new per-session file.
+   what you just labeled) → re-run `run_labeling.ipynb`. New labels append as a new per-session file.
 4. **`code/create_label_asset.ipynb`** — publishes `/scratch/labels` as a new
    `HCR-ROI-human-labeling` data asset (captured from the workstation). The **training
    capsule** attaches all such assets (merged newest-wins).
