@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+# cache bust 260620-00
+
 # Interactive labeling capsule: install the ROI-quality package (provides the
 # `roi-classifier-label` matplotlib GUI). The Ubuntu-desktop base image supplies
 # the X display the GUI needs.
